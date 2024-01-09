@@ -17,13 +17,16 @@ async def on_message(message):
         if "https://" in message.content.lower() and (message.channel.name.lower()=="☆promote-yourself✿" or message.channel.name.lower()=="🔞nsfw-uwu"):
             return
 
-        else:
+        elif "https://" in message.content.lower():
 
             try:
                 await message.delete()
                 await message.channel.send(f"{message.author.mention} you cannot publish links outside of https://discord.com/channels/1189657001861582918/1189722970520813700")
             except:
                 return
+
+        else:
+            return
 
             
         #elif "https://twitter.com" in message.content.lower():
