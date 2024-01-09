@@ -1,5 +1,5 @@
 import discord_easy_commands
-from discord_easy_commands.flask import request
+from discord_easy_commands import flask.request
 import os
 
 intentos = discord_easy_commands.discord.Intents.all()
