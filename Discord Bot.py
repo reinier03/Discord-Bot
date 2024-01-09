@@ -1,4 +1,5 @@
 import discord_easy_commands
+from discord_easy_commands.flask import request
 import os
 
 intentos = discord_easy_commands.discord.Intents.all()
@@ -12,6 +13,8 @@ async def on_ready():
 async def on_message(message):
     # Verificar que el mensaje sea del servidor y no del bot
     if message.guild and not message.author.bot:
+        if message.contet.lower()=="/servert":
+            await message.send(f"El servidor es: {request.host_url}
         # Verificar si el mensaje contiene un enlace a Twitter
         if "https://" in message.content.lower() and not message.channel.name.lower()=="☆promote-yourself✿":
             await message.delete()
