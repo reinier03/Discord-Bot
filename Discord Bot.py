@@ -1,5 +1,6 @@
 import discord_easy_commands
 import os
+from discord_easy_commands import flask
 
 intentos = discord_easy_commands.discord.Intents.all()
 client = discord_easy_commands.EasyBot(intents=intentos)
@@ -13,11 +14,14 @@ async def on_message(message):
     # Verificar que el mensaje sea del servidor y no del bot
     if message.guild and not message.author.bot:
         if message.content.lower()=="/servert":
-            await message.channel.send(f"El servidor es: {discord_easy_commands.flask.request.host_url}")
+            await message.channel.send(f"El servidor es: {flask.request.host_url}")
         # Verificar si el mensaje contiene un enlace a Twitter
         if "https://" in message.content.lower() and not message.channel.name.lower()=="☆promote-yourself✿":
-            await message.delete()
-            await message.channel.send(f"{message.author.mention} no puedes publicar mensajes fuera de https://discord.com/channels/1189657001861582918/1189722970520813700")
+            try:
+                await message.delete()
+                await message.channel.send(f"{message.author.mention} no puedes publicar mensajes fuera de https://discord.com/channels/1189657001861582918/1189722970520813700")
+            except:
+                pass
             
         elif "https://twitter.com" in message.content.lower():
             lista=message.content.split("//")
