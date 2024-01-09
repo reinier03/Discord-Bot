@@ -28,7 +28,7 @@ async def on_message(message):
             #except:
                 #pass
             
-            palabra="//vx".join(lista)
+            #palabra="//vx".join(lista)
             # Crear una copia del mensaje con "vx" agregado al inicio
             #new_content = f"{palabra}"
 
