@@ -30,7 +30,7 @@ async def on_message(message):
             
             palabra="//vx".join(lista)
             # Crear una copia del mensaje con "vx" agregado al inicio
-            new_content = f"{palabra}"
+            #new_content = f"{palabra}"
 
             # Borrar el mensaje original
             #await message.delete()
