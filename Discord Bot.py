@@ -33,7 +33,7 @@ async def on_message(message):
             new_content = f"{palabra}"
 
             # Borrar el mensaje original
-            await message.delete()
+            #await message.delete()
 
             # Enviar el mensaje copiado al mismo canal
             await message.channel.send(new_content)
