@@ -1,4 +1,5 @@
 import discord_easy_commands
+import os
 
 intentos = discord_easy_commands.discord.Intents.all()
 client = discord_easy_commands.EasyBot(intents=intentos)
@@ -37,4 +38,4 @@ async def on_message(message):
 # Token de autenticación del bot (debes reemplazar esto con tu propio token)
 
 # Iniciar el bot
-client.run("MTE5MDQzNzU3MTk3MzYzMjA5Mw.GpE-Zv.8R5lVgN8PKwFkXI9o7dCRm1gB1F6I59MXZGiiE")
+client.run(os.environ["token"])
