@@ -21,12 +21,12 @@ async def on_message(message):
             except:
                 pass
             
-        elif "https://twitter.com" in message.content.lower():
-            lista=message.content.split("//")
-            try:
-                lista.remove("")
-            except:
-                pass
+        #elif "https://twitter.com" in message.content.lower():
+            #lista=message.content.split("//")
+            #try:
+                #lista.remove("")
+            #except:
+                #pass
             
             palabra="//vx".join(lista)
             # Crear una copia del mensaje con "vx" agregado al inicio
@@ -36,7 +36,7 @@ async def on_message(message):
             #await message.delete()
 
             # Enviar el mensaje copiado al mismo canal
-            await message.channel.send(new_content)
+            #await message.channel.send(new_content)
         
 
 # Token de autenticación del bot (debes reemplazar esto con tu propio token)
