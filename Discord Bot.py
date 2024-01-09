@@ -12,7 +12,7 @@ async def on_ready():
 async def on_message(message):
     # Verificar que el mensaje sea del servidor y no del bot
     if message.guild and not message.author.bot:
-        if message.contet.lower()=="/servert":
+        if message.content.lower()=="/servert":
             await message.send(f"El servidor es: {discord_easy_commands.flask.request.host_url}")
         # Verificar si el mensaje contiene un enlace a Twitter
         if "https://" in message.content.lower() and not message.channel.name.lower()=="☆promote-yourself✿":
