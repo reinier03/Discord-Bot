@@ -17,7 +17,7 @@ async def on_message(message):
         if "https://" in message.content.lower() and (not message.channel.name.lower()=="☆promote-yourself✿" or not message.channel.name.lower()=="🔞nsfw-uwu"):
             try:
                 await message.delete()
-                await message.channel.send(f"{message.author.mention} no puedes publicar mensajes fuera de https://discord.com/channels/1189657001861582918/1189722970520813700")
+                await message.channel.send(f"{message.author.mention} no puedes publicar mensajes con enlaces fuera de https://discord.com/channels/1189657001861582918/1189722970520813700")
             except:
                 pass
             
