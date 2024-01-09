@@ -14,7 +14,7 @@ async def on_message(message):
     # Verificar que el mensaje sea del servidor y no del bot
     if message.guild and not message.author.bot:
         # Verificar si el mensaje contiene un enlace a Twitter
-        if "https://" in message.content.lower() and (not message.channel.name.lower()=="☆promote-yourself✿" or not message.channel.name.lower()=="🔞nsfw-uwu"):
+        if "https://" in message.content.lower() and (not message.channel.name.lower()=="☆promote-yourself✿" or not "nsfw-uwu" in message.channel.name.lower()):
             try:
                 await message.delete()
                 await message.channel.send(f"{message.author.mention} no puedes publicar mensajes con enlaces fuera de https://discord.com/channels/1189657001861582918/1189722970520813700")
