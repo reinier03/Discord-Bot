@@ -91,9 +91,8 @@ def obtener_memes():
     return publicar(diccionario, user)
 
 
-def publicar(diccionario, user):
-    global id_canal
-    canal=client.get_channel(id_canal) #reemplazar este valor con el chat id del destino
+async def publicar(diccionario, user):
+    canal=client.get_channel(1189687855774191687) #reemplazar este valor con el chat id del destino
     for e, i in enumerate(diccionario, start=1):
         res=requests.get(diccionario[e][0], headers=user)
         
@@ -102,7 +101,7 @@ def publicar(diccionario, user):
             
         archivo_lectura=open(f"{os.path.basename(diccionario[e][0])}", "rb")
         archivo=easy_bot_reima.discord.File(archivo_lectura)
-        canal.send(f"{diccionario[e][1]}",file=archivo) 
+        await canal.send(f"{diccionario[e][1]}",file=archivo) 
                 
         archivo_lectura.close()
         os.remove(os.path.basename(diccionario[e][0]))
@@ -112,15 +111,16 @@ def publicar(diccionario, user):
                 
                 
                 
-obtener_memes()
 
-lista=threading.enumerate()
-for i in lista:
-    if "hilo" in str(i):
-        break
-else:
-    hilo=threading.Thread(target=obtener_memes, name="hilo")
-    hilo.start()
+@client.event
+async def on_ready():
+    lista=threading.enumerate()
+    for i in lista:
+        if "hilo" in str(i):
+            break
+    else:
+        hilo=threading.Thread(target=obtener_memes, name="hilo")
+        hilo.start()
 
 
 
