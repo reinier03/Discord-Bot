@@ -91,7 +91,7 @@ def obtener_memes():
     return publicar(diccionario, user)
 
 
-def publicar(diccionario, user):
+async def publicar(diccionario, user):
     canal=client.get_channel(1189687855774191687) #reemplazar este valor con el chat id del destino
     for e, i in enumerate(diccionario, start=1):
         res=requests.get(diccionario[e][0], headers=user)
