@@ -88,7 +88,7 @@ async def obtener_memes():
                     break
                 
                 
-    await return publicar(diccionario, user)
+    return await publicar(diccionario, user)
 
 
 async def publicar(diccionario, user):
