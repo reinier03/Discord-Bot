@@ -91,7 +91,7 @@ def obtener_memes():
     return publicar(diccionario, user)
 
 
-async def publicar(diccionario, user):
+def publicar(diccionario, user):
     canal=client.get_channel(1189687855774191687) #reemplazar este valor con el chat id del destino
     for e, i in enumerate(diccionario, start=1):
         res=requests.get(diccionario[e][0], headers=user)
@@ -101,7 +101,7 @@ async def publicar(diccionario, user):
             
         archivo_lectura=open(f"{os.path.basename(diccionario[e][0])}", "rb")
         archivo=easy_bot_reima.discord.File(archivo_lectura)
-        await canal.send(f"{diccionario[e][1]}",file=archivo) 
+        canal.send(f"{diccionario[e][1]}",file=archivo) 
                 
         archivo_lectura.close()
         os.remove(os.path.basename(diccionario[e][0]))
