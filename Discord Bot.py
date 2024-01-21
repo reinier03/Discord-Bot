@@ -105,7 +105,7 @@ async def publicar(diccionario, user):
                 
         archivo_lectura.close()
         os.remove(os.path.basename(diccionario[e][0]))
-        sleep(1800)
+        await sleep(1800)
     return
             
                 
