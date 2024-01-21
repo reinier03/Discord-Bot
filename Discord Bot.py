@@ -101,7 +101,7 @@ def publicar(diccionario, user):
             
         archivo_lectura=open(f"{os.path.basename(diccionario[e][0])}", "rb")
         archivo=easy_bot_reima.discord.File(archivo_lectura)
-        canal.send(f"{diccionario[e][1]}",file=archivo) 
+        await canal.send(f"{diccionario[e][1]}",file=archivo) 
                 
         archivo_lectura.close()
         os.remove(os.path.basename(diccionario[e][0]))
