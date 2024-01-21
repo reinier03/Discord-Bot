@@ -63,7 +63,7 @@ async def on_message(message):
 
 
 
-def obtener_memes():
+async def obtener_memes():
     global diccionario
     global user
     contador=0
@@ -88,7 +88,7 @@ def obtener_memes():
                     break
                 
                 
-    return publicar(diccionario, user)
+    await return publicar(diccionario, user)
 
 
 async def publicar(diccionario, user):
